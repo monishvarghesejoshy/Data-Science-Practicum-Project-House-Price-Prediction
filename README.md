@@ -49,11 +49,11 @@ The **Categorical** Features are Alley, BldgType, BsmtCond, BsmtExposure, BsmtFi
 
 The table below shows a quantitative estimate of the percentage of missing values present in the column of the features of the dataset. As we can see that the features **Alley** , **PoolQC, Fence** and **Miscfeature** contains almost the entire column as blank so we decide to drop these features as imputing these features with any value would not make any sense.
 
-![](RackMultipart20210627-4-comaw2_html_1a82245ac25f3832.png)
+![image](https://user-images.githubusercontent.com/16374886/123544347-7a8a4100-d718-11eb-8f06-a4b38ff31a34.png)
 
 The graph below sums up the table fairly showing the four features as the ones having the maximum percentage of values as null values.
 
-![](RackMultipart20210627-4-comaw2_html_363c7e6757cdfdf5.png)
+![image](https://user-images.githubusercontent.com/16374886/123544407-c0dfa000-d718-11eb-86fd-5a14dfc484ec.png)
 
 Fig. 1: Countplot Showing the Number of missing values in each of the features of the dataset.
 
@@ -61,19 +61,19 @@ Following this, I did Univariate and Bivariate Analysis of Categorical and Numer
 
 When I plotted a countplot of features against target variable, I observe that &#39;BsmtFullBath&#39;, &#39;BsmtHalfBath&#39;, &#39;FullBath&#39;, &#39;HalfBath&#39;, &#39;Bedroom&#39;, &#39;Kitchen&#39;, &#39;KitchenQual&#39;, &#39;TotRmsAbvGrd&#39;, &#39;Fireplaces&#39;, &#39;GarageType&#39;, &#39;MiscVal&#39;, &#39;MoSold&#39;, &#39;YrSold&#39; variables are in int64/float64 type(i.e. They were considered as quantitative features), but they can be treated as categorical. The barplots below for these mentioned features imply the reason for the same.
 
-![](RackMultipart20210627-4-comaw2_html_73974daa7f63b56c.png)
+![image](https://user-images.githubusercontent.com/16374886/123544428-d5239d00-d718-11eb-8ed0-9bdec88594e9.png)
 
 Fig. 2: Countplots of features which were considered quantitative but can be converted to Categorical.
 
-![](RackMultipart20210627-4-comaw2_html_8bfbb105681beb59.png)
-
-![](RackMultipart20210627-4-comaw2_html_7e0e1452ad790dd2.png)
-
 The three figures on the left show that the target column which is the SalesPrice does not follow a normal distribution, so before performing regression it has to be transformed. While log transformation does pretty good job, best fit is unbounded Johnson distribution.
 
-![](RackMultipart20210627-4-comaw2_html_94cb8a16146f3f19.png)
+![image](https://user-images.githubusercontent.com/16374886/123544470-069c6880-d719-11eb-99b4-35c39cdf8b88.png)
 
-![](RackMultipart20210627-4-comaw2_html_7a6ea6eef398d653.png)
+![image](https://user-images.githubusercontent.com/16374886/123544480-12882a80-d719-11eb-8470-225bc311141d.png)
+
+![image](https://user-images.githubusercontent.com/16374886/123544488-1d42bf80-d719-11eb-9bd0-003b12f477f6.png)
+
+![image](https://user-images.githubusercontent.com/16374886/123544524-44998c80-d719-11eb-8b40-b860a34b31e8.png)
 
 On the left is the graph of Anova Test P values which gives a quick estimate of influence of categorical variables on SalePrice.
 
@@ -81,21 +81,21 @@ For each variable SalePrices are partitioned to distinct sets based on category 
 
 Fig. 4 - Anova test P-value graph
 
-![](RackMultipart20210627-4-comaw2_html_660825a506ce1d8c.png)
+![image](https://user-images.githubusercontent.com/16374886/123544537-5418d580-d719-11eb-9f9d-8dcd87d64ba8.png)
 
 Fig. 5: Spearman Correlation values plot of each feature with the &quot;SalesPrice&quot; target feature.
 
 Spearman correlation is better to work with in this case because it picks up relationships between variables even when they are nonlinear. OverallQual is main criterion in establishing house price. Neighborhood has big influence, partially it has some intrisinc value in itself, but also houses in certain regions tend to share same characteristics (confunding) what causes similar valuations.
 
-![](RackMultipart20210627-4-comaw2_html_6ccbf70a3ccf1b7a.png)
+![image](https://user-images.githubusercontent.com/16374886/123544543-609d2e00-d719-11eb-8f69-ed4408d0a867.png)
 
-Fig. 6: Relationship between overall quality of the house and its sales price. ![](RackMultipart20210627-4-comaw2_html_1111be5a64652aa5.png)
+Fig. 6: Relationship between overall quality of the house and its sales price. ![image](https://user-images.githubusercontent.com/16374886/123544555-77dc1b80-d719-11eb-8d41-203ad0d6e405.png)
 
 Fig. 7: Relationship between the year in which the house was built and its sales price.
 
 &#39;OverallQual&#39; and &#39;YearBuilt&#39; also seem to be related with &#39;SalePrice&#39;. The relationship seems to be stronger in the case of &#39;OverallQual&#39;, where the box plot shows how sales prices increase with the overall quality.
 
-![](RackMultipart20210627-4-comaw2_html_853f7eb45d0fc0bb.png)
+![image](https://user-images.githubusercontent.com/16374886/123544565-83c7dd80-d719-11eb-8684-b0e236abef9f.png)
 
 Fig.8: Correlation Heatmap Plot
 
@@ -108,7 +108,7 @@ Some points to note from the Correlation Plot:
 
 **Scatter plots between &#39;SalePrice&#39; and correlated variables**
 
-Fig. 9: Scatterplot of Numerical features vs SalesPrice Variable ![](RackMultipart20210627-4-comaw2_html_8a12584eed0536b6.png)
+Fig. 9: Scatterplot of Numerical features vs SalesPrice Variable ![image](https://user-images.githubusercontent.com/16374886/123544605-b5d93f80-d719-11eb-96d5-13a55c233e49.png)
 
 This mega scatter plot gives us a reasonable idea about variables relationships.
 
@@ -147,21 +147,21 @@ From the Feature Description file, we could estimate what we want to fill the &#
 
 For those features that are highly skewed, they are normalized using Log transformation.
 
-The following figures show how the log transformation affects the distribution of SalesPrice values. ![](RackMultipart20210627-4-comaw2_html_957ba84e6a2133d2.png)
+The following figures show how the log transformation affects the distribution of SalesPrice values. ![image](https://user-images.githubusercontent.com/16374886/123544647-e02afd00-d719-11eb-9c4a-ad5542394f91.png)
 
 Fig. 10: Before Log transformation, the graphs shows how the data is skewed.
 
-Fig. 11: After Log transformation, the graphs shows how the data is perfectly normalized. ![](RackMultipart20210627-4-comaw2_html_a0bc2365ae0a96d5.png)
+Fig. 11: After Log transformation, the graphs shows how the data is perfectly normalized. ![image](https://user-images.githubusercontent.com/16374886/123544718-2b451000-d71a-11eb-86bf-e6c8b317385a.png)
 
 # **Baseline Models**
 
 We divide the dataset in the ratio 66.67/33.33 into train/validation sets respectively. The model is trained on train dataset and further evaluated on the validation dataset. The evaluation metric used is Root Mean Square Error. The calculation formula for the same is given below:
 
-![](RackMultipart20210627-4-comaw2_html_97fccb6248a862f2.png)
+![image](https://user-images.githubusercontent.com/16374886/123544725-39932c00-d71a-11eb-852b-adbe740141d8.png)
 
 The table below represents a tabular representation of performances of numerous different regressors that I have implemented.
 
-![](RackMultipart20210627-4-comaw2_html_72976227f4bf2719.png)
+![image](https://user-images.githubusercontent.com/16374886/123544736-444dc100-d71a-11eb-9563-ccd1c972e3e3.png)
 
 Fig. 12: Model Performance on the dataset without any feature Engineering or selection
 
@@ -193,11 +193,13 @@ Now, in order to do feature selection, we need feature importance first to do se
 
 I implemented a CatBoost Regressor and fitted it on the train dataset. Following this I could easily get the feature importance of each feature for the model. The barplot below shows a quantitative estimate of feature importance of top twenty features.
 
-![](RackMultipart20210627-4-comaw2_html_44d9a86357a585e1.png)Fig. 13 - Feature Importance plot of top twenty features w.r.t the CatBoost Regressor.
+![image](https://user-images.githubusercontent.com/16374886/123544753-5596cd80-d71a-11eb-92da-4ebd6c35f770.png)
+
+Fig. 13 - Feature Importance plot of top twenty features w.r.t the CatBoost Regressor.
 
 Catboost comes with a great method: get\_feature\_importance. This method can be used to find important interactions among features. This is a huge advantage because it can give us insights about possible new features to create that can improve the performance.
 
-![](RackMultipart20210627-4-comaw2_html_4c51e941d06efc00.png)
+![image](https://user-images.githubusercontent.com/16374886/123544764-61828f80-d71a-11eb-86d5-dfd1ccc41e6a.png)
 
 Fig. 14 - Feature Interaction Levels
 
